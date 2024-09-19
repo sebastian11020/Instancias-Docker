@@ -1,0 +1,20 @@
+services:
+  mayusculas:
+    build:
+      context: ./Mayus-Server
+    ports:
+      - "3001:3001"
+    networks:
+      - letra-net
+
+  minusculas:
+    build:
+      context: ./Minus-Server
+    ports:
+      - "3002:3002"
+    networks:
+      - letra-net
+
+networks:
+  letra-net:
+    driver: bridge
